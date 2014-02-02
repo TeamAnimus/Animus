@@ -6,7 +6,7 @@ import com.artemis.World;
 import com.artemis.ComponentMapper;
 
 import test.components.*;
-import test.system.*;
+import test.systems.*;
 
 public class Test
 {

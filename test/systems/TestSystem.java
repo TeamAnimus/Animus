@@ -1,4 +1,4 @@
-package test.system;
+package test.systems;
 
 import com.artemis.Aspect;
 import com.artemis.systems.VoidEntitySystem;
