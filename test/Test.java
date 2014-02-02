@@ -25,7 +25,8 @@ public class Test
         numMapper = world.getMapper( TestComponent.class );
 
         createEntity ( 3 );
-        createEntity ( 5 );
+        Entity e = createEntity ( 5 );
+        e.disable();
         createEntity ( 99 );
         createOtherEntity ( 12345 );
 
