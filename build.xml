@@ -1,0 +1,40 @@
+<project default="animus">
+
+	<presetdef name="javac">
+		<javac includeantruntime="false"/>
+	</presetdef>
+
+	<path id="master-classpath">
+		<fileset dir="libs">
+			<include name="*.jar"/>
+		</fileset>
+
+		<pathelement path="target"/>
+	</path>
+
+	<target name="animus">
+		<mkdir dir="target"/>
+		<javac srcdir="animus" destdir="target">
+			<classpath refid="master-classpath"/>
+		</javac>
+	</target>
+	<target name="test">
+		<mkdir dir="target"/>
+		<javac srcdir="test" destdir="target">
+			<classpath refid="master-classpath"/>
+		</javac>
+	</target>
+	<target name="slicktest">
+		<mkdir dir="target"/>
+		<javac srcdir="slicktest" destdir="target">
+			<classpath refid="master-classpath"/>
+		</javac>
+	</target>
+
+	<target name="run-test">
+		<java dir="target" classname="test.Test">
+			<classpath refid="master-classpath"/>
+		</java>
+	</target>
+
+</project>
