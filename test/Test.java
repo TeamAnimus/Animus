@@ -24,11 +24,11 @@ public class Test
 
         numMapper = world.getMapper( TestComponent.class );
 
-        createEntity ( 3 );
-        Entity e = createEntity ( 5 );
+        EntityFactory.createTestEntity ( world, 3 );
+        Entity e = EntityFactory.createTestEntity ( world, 5 );
         e.disable();
-        createEntity ( 99 );
-        createOtherEntity ( 12345 );
+        EntityFactory.createTestEntity ( world, 99 );
+        EntityFactory.createOtherEntity ( world, 12345 );
 
         world.setDelta ( 1 );
 
@@ -36,27 +36,6 @@ public class Test
         {
             world.process();
         }
-    }
-
-    private Entity createEntity ( int num )
-    {
-        Entity e = world.createEntity();
-
-        e.addComponent ( new TestComponent ( num ) );
-        e.addComponent ( new OtherComponent ( num ) );
-        world.addEntity ( e );
-
-        return e;
-    }
-
-    private Entity createOtherEntity ( int num )
-    {
-        Entity e = world.createEntity();
-
-        e.addComponent ( new OtherComponent ( num ) );
-        world.addEntity ( e );
-
-        return e;
     }
 
     public static void main ( String args[] )
