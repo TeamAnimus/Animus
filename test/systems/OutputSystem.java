@@ -12,6 +12,7 @@ public class OutputSystem extends IntervalEntityProcessingSystem
 {
     private ComponentMapper<TestComponent> numMapper;
 
+    @SuppressWarnings ( "unchecked" ) // TestComponent does exist
     public OutputSystem ( int interval )
     {
         super ( Aspect.getAspectForOne ( TestComponent.class ), interval );
@@ -25,6 +26,7 @@ public class OutputSystem extends IntervalEntityProcessingSystem
     }
 
     @Override
+    @SuppressWarnings ( "unchecked" ) // We have already checked that e has a TestComponent
     protected void process ( Entity e )
     {
         TestComponent t = numMapper.get ( e );
