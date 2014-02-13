@@ -37,4 +37,12 @@
 		</java>
 	</target>
 
+	<target name="run-slicktest">
+		<java dir="target" classname="slicktest.SlickTest" fork="true">
+			<jvmarg value="-Djava.library.path=../libs/natives-linux/"/>
+			<classpath refid="master-classpath"/>
+		</java>
+	</target>
+
+
 </project>
