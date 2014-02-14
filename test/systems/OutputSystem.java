@@ -26,7 +26,6 @@ public class OutputSystem extends IntervalEntityProcessingSystem
     }
 
     @Override
-    @SuppressWarnings ( "unchecked" ) // We have already checked that e has a TestComponent
     protected void process ( Entity e )
     {
         TestComponent t = numMapper.get ( e );
