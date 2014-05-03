@@ -1,36 +1,30 @@
 package gdxtest;
 
-import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import com.badlogic.gdx.Game;
 
-public class GdxTest implements ApplicationListener
+public class Animus extends Game
 {
+    public static final int FRAME_WIDTH = 1280;
+    public static final int FRAME_HEIGHT = 900;
+
     @Override
     public void create()
     {
-        // Do nothing
+        setScreen ( new GameScreen ( this ) );
     }
 
-    public void render()
+    public static void main ( String args[] )
     {
-    }
-
-    public void pause()
-    {
-        // Do nothing
-    }
-
-    public void resize ( int width, int height )
-    {
-        // Do nothing
-    }
-
-    public void resume()
-    {
-        // Do nothing
-    }
-
-    public void dispose()
-    {
-        // Do nothing
+        LwjglApplicationConfiguration config =
+            new LwjglApplicationConfiguration();
+        config.fullscreen = false;
+        config.width = FRAME_WIDTH;
+        config.height = FRAME_HEIGHT;
+        config.useCPUSynch = false;
+        config.vSyncEnabled = false;
+        config.title = "Animus";
+        new LwjglApplication ( new Animus(), config );
     }
 }
