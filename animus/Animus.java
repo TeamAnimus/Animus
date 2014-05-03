@@ -1,4 +1,4 @@
-package gdxtest;
+package animus;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
@@ -22,7 +22,6 @@ public class Animus extends Game
         config.fullscreen = false;
         config.width = FRAME_WIDTH;
         config.height = FRAME_HEIGHT;
-        config.useCPUSynch = false;
         config.vSyncEnabled = false;
         config.title = "Animus";
         new LwjglApplication ( new Animus(), config );

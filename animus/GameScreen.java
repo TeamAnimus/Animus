@@ -1,6 +1,9 @@
-package gdxtest;
+package animus;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.Gdx;
 
 public class GameScreen implements Screen
 {
@@ -10,30 +13,42 @@ public class GameScreen implements Screen
     }
 
     @Override
-    public void create()
+    public void render ( float delta )
     {
-        // Do nothing
+        Gdx.gl10.glClear ( GL10.GL_COLOR_BUFFER_BIT );
     }
 
-    public void render()
-    {
-    }
-
+    @Override
     public void pause()
     {
         // Do nothing
     }
 
+    @Override
     public void resize ( int width, int height )
     {
         // Do nothing
     }
 
+    @Override
     public void resume()
     {
         // Do nothing
     }
 
+    @Override
+    public void show()
+    {
+        // Do nothing
+    }
+
+    @Override
+    public void hide()
+    {
+        // Do nothing
+    }
+
+    @Override
     public void dispose()
     {
         // Do nothing
